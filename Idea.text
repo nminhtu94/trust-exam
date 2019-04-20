@@ -1,0 +1,43 @@
+//--------- Smart Contract ---------//
+Page Create exam
+  Create smartContract {
+    examName: String,
+    startTime: Int64,
+    duration: Int64,
+    submissionWindow: Int64,
+    listExamIDs: ['A123', 'B146', 'C356'],
+    participant: {
+      address: examID,
+      address1: examID1
+    }
+    results: {
+      'participantAddress': {
+        hashAnswer: bytes32
+        rawAnswer: "0,2,1,2,3,4,3,4"
+      },
+      'participantAddress': {
+        hashAnswer: bytes32
+        rawAnswer: "0,2,1,2,3,4,3,4"
+      },
+      'participantAddress': {
+        hashAnswer: bytes32
+        rawAnswer: "0,2,1,2,3,4,3,4"
+      }
+    },
+
+    insertParticipant('address', 'examID') require before startTime,
+    editParticipant('address', 'examID') require before startTime, (optional)
+    submitHashAnswer(hashAnswer) require before startTime + duration after StartTime,
+    rawAnswer(string) require before startTime + duration after StartTime, require isValidAnswer()
+    isValidAnswer()
+  }
+---> ContractAddress
+
+
+//---------------Client---------//
+
+home page -> (register, enter exam)
+
+registerParticipant Page
+verify student (QR/menomic) -> submitResults
+
