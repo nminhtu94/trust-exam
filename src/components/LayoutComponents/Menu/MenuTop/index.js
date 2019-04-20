@@ -120,8 +120,8 @@ class MenuTop extends React.Component {
           onClick={
             this.props.isMobile
               ? () => {
-                dispatch(setLayoutState({ menuCollapsed: false }))
-              }
+                  dispatch(setLayoutState({ menuCollapsed: false }))
+                }
               : undefined
           }
         >
@@ -130,11 +130,11 @@ class MenuTop extends React.Component {
         </Link>
       </Menu.Item>
     ) : (
-          <Menu.Item key={key} disabled={disabled}>
-            <span className="menuTop__item-title">{title}</span>
-            {icon && <span className={icon + ' menuTop__icon'} />}
-          </Menu.Item>
-        )
+      <Menu.Item key={key} disabled={disabled}>
+        <span className="menuTop__item-title">{title}</span>
+        {icon && <span className={icon + ' menuTop__icon'} />}
+      </Menu.Item>
+    )
   }
 
   componentWillMount() {

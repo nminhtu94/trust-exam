@@ -40,9 +40,7 @@ class RegisterForm extends React.Component {
           <FormItem label="Name">
             {form.getFieldDecorator('username', {
               initialValue: 'ohmnislash',
-              rules: [
-                { required: true, message: 'Please input your full name' },
-              ],
+              rules: [{ required: true, message: 'Please input your full name' }],
             })(<Input size="default" />)}
           </FormItem>
           <FormItem label="ID">

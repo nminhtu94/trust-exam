@@ -163,7 +163,7 @@ const initialState = {
 
   // EXAM
   examState: {
-    duration: 0
+    duration: 0,
   },
 }
 
