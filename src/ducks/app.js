@@ -135,10 +135,9 @@ export const logout = () => (dispatch, getState) => {
   dispatch(push('/register'))
 }
 
-
 export const doUpdateTimer = isTimerRunning => dispatch => {
-  console.log('doUpdateTimer', isTimerRunning);
-  dispatch(updateTimer(isTimerRunning));
+  console.log('doUpdateTimer', isTimerRunning)
+  dispatch(updateTimer(isTimerRunning))
 }
 
 const initialState = {
@@ -211,7 +210,7 @@ export default createReducer(
     },
     [updateTimer]: (state, isTimerRunning) => {
       return { ...state, isTimerRunning }
-    }
+    },
   },
   initialState,
 )

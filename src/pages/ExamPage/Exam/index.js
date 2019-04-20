@@ -6,27 +6,30 @@ import { doUpdateTimer } from '../../../ducks/app'
 
 const Panel = Collapse.Panel
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({})
 
 const mapDispatchToProps = {
-  doUpdateTimerAction: doUpdateTimer
+  doUpdateTimerAction: doUpdateTimer,
 }
 
-@connect(mapStateToProps, mapDispatchToProps)
+@connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)
 class Exam extends React.Component {
-
   // test
   componentDidMount() {
-    console.log('componentDidMount Exam');
-    const { doUpdateTimerAction } = this.props;
-    doUpdateTimerAction(true);
+    console.log('componentDidMount Exam')
+    const { doUpdateTimerAction } = this.props
+    doUpdateTimerAction(true)
 
-    setTimeout(() => doUpdateTimerAction(false), 5000);
+    setTimeout(() => doUpdateTimerAction(false), 5000)
   }
 
   render() {
     return (
-      <div className="utils__content"
+      <div
+        className="utils__content"
         style={{ position: 'fixed', top: '64px', bottom: '0', overflowY: 'auto' }}
       >
         <section className="card">
@@ -44,7 +47,7 @@ class Exam extends React.Component {
               remaining essentially unchanged. It was popularised in the 1960s with the release of
               Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
               publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </p>
+            </p>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
               has been the industry's standard dummy text ever since the 1500s, when an unknown
@@ -53,7 +56,7 @@ class Exam extends React.Component {
               remaining essentially unchanged. It was popularised in the 1960s with the release of
               Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
               publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </p>
+            </p>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
               has been the industry's standard dummy text ever since the 1500s, when an unknown
@@ -62,7 +65,7 @@ class Exam extends React.Component {
               remaining essentially unchanged. It was popularised in the 1960s with the release of
               Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
               publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </p>
+            </p>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
               has been the industry's standard dummy text ever since the 1500s, when an unknown
@@ -71,7 +74,7 @@ class Exam extends React.Component {
               remaining essentially unchanged. It was popularised in the 1960s with the release of
               Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
               publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </p>
+            </p>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
               has been the industry's standard dummy text ever since the 1500s, when an unknown
@@ -80,7 +83,7 @@ class Exam extends React.Component {
               remaining essentially unchanged. It was popularised in the 1960s with the release of
               Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
               publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </p>
+            </p>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
               has been the industry's standard dummy text ever since the 1500s, when an unknown
@@ -89,7 +92,7 @@ class Exam extends React.Component {
               remaining essentially unchanged. It was popularised in the 1960s with the release of
               Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
               publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </p>
+            </p>
           </div>
         </section>
       </div>

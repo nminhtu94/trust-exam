@@ -34,12 +34,7 @@ class AppContent extends React.Component {
   render() {
     const { getContentBuffer } = this.context
     const { pathName, content } = getContentBuffer()
-    return isEmpty(content) ? (
-      <div className="utils__loadingPage" />
-    ) : (
-        <div>
-          {content}
-        </div>)
+    return isEmpty(content) ? <div className="utils__loadingPage" /> : <div>{content}</div>
   }
 }
 
