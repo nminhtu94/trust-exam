@@ -15,17 +15,23 @@ const loadable = loader =>
 
 const loadableRoutes = {
   // Default Pages
-  '/login': {
-    component: loadable(() => import('pages/DefaultPages/LoginPage')),
+  // '/login': {
+  //   component: loadable(() => import('pages/DefaultPages/LoginPage')),
+  // },
+  '/register': {
+    component: loadable(() => import('pages/DefaultPages/RegisterPage')),
   },
   '/empty': {
     component: loadable(() => import('pages/DefaultPages/EmptyPage')),
   },
+  '/exam': {
+    component: loadable(() => import('pages/ExamPage')),
+  },
 
   // Dashboards
-  '/dashboard/alpha': {
-    component: loadable(() => import('pages/Dashboard/DashboardAlphaPage')),
-  },
+  // '/dashboard/alpha': {
+  //   component: loadable(() => import('pages/Dashboard/DashboardAlphaPage')),
+  // },
 }
 
 class Routes extends React.Component {

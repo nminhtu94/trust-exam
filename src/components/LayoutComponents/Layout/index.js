@@ -95,17 +95,17 @@ class Layout extends React.Component {
               <BackTop />
               <Routes />
               <Menu isMobile={isMobile} />
-              <SettingsSider />
+              {/* <SettingsSider /> */}
               <AntLayout>
                 <AntHeader>
                   <TopBar />
                 </AntHeader>
-                <AntContent style={{ height: '100%' }}>
+                <AntContent style={{ position: 'fixed', top: '64px', bottom: '0', overflowY: 'auto' }}>
                   <Content />
                 </AntContent>
-                <AntFooter>
+                {/* <AntFooter>
                   <Footer />
-                </AntFooter>
+                </AntFooter> */}
               </AntLayout>
             </AntLayout>
           </div>

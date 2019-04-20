@@ -40,7 +40,8 @@ export const initAuth = roles => (dispatch, getState) => {
 
   const users = {
     administrator: {
-      email: 'admin@mediatec.org',
+      email: 'ohmnislash',
+      id: '0225111999',
       role: 'administrator',
     },
     agent: {
@@ -58,8 +59,8 @@ export const initAuth = roles => (dispatch, getState) => {
       }),
     )
     if (!roles.find(role => role === userRole)) {
-      if (!(state.routing.location.pathname === '/dashboard/alpha')) {
-        dispatch(push('/dashboard/alpha'))
+      if (!(state.routing.location.pathname === '/exam')) {
+        dispatch(push('/exam'))
       }
       return Promise.resolve(false)
     }
@@ -70,14 +71,14 @@ export const initAuth = roles => (dispatch, getState) => {
     case 'administrator':
       return setUser(users.administrator, userRole)
 
-    case 'agent':
-      return setUser(users.agent, userRole)
+    // case 'agent':
+    //   return setUser(users.agent, userRole)
 
     default:
       const location = state.routing.location
       const from = location.pathname + location.search
       dispatch(_setFrom(from))
-      dispatch(push('/login'))
+      dispatch(push('/register'))
       return Promise.reject()
   }
 }
@@ -85,37 +86,34 @@ export const initAuth = roles => (dispatch, getState) => {
 export function login(username, password, dispatch) {
   // Use Axios there to get User Auth Token with Basic Method Authentication
 
-  if (username === 'admin@mediatec.org' && password === '123123') {
+  if (username === 'ohmnislash' && password === '025111999') {
     window.localStorage.setItem('app.Authorization', '')
     window.localStorage.setItem('app.Role', 'administrator')
     dispatch(_setHideLogin(true))
-    dispatch(push('/dashboard/alpha'))
+    dispatch(push('/exam'))
     notification.open({
       type: 'success',
-      message: 'You have successfully logged in!',
-      description:
-        'Welcome to the Clean UI Admin Template. The Clean UI Admin Template is a complimentary template that empowers developers to make perfect looking and useful apps!',
+      message: 'You have successfully register!',
+      description: '',
     })
     return true
   }
 
-  if (username === 'agent@mediatec.org' && password === '123123') {
-    window.localStorage.setItem('app.Authorization', '')
-    window.localStorage.setItem('app.Role', 'agent')
-    dispatch(_setHideLogin(true))
-    dispatch(push('/dashboard/alpha'))
-    notification.open({
-      type: 'success',
-      message: 'You have successfully logged in!',
-      description:
-        'Welcome to the Clean UI Admin Template. The Clean UI Admin Template is a complimentary template that empowers developers to make perfect looking and useful apps!',
-    })
-    return true
-  }
+  // if (username === 'agent@mediatec.org' && password === '025111999') {
+  //   window.localStorage.setItem('app.Authorization', '')
+  //   window.localStorage.setItem('app.Role', 'agent')
+  //   dispatch(_setHideLogin(true))
+  //   dispatch(push('/dashboard/alpha'))
+  //   notification.open({
+  //     type: 'success',
+  //     message: 'You have successfully register!',
+  //     description: '',
+  //   })
+  //   return true
+  // }
 
-  dispatch(push('/login'))
+  dispatch(push('/register'))
   dispatch(_setFrom(''))
-
   return false
 }
 
@@ -124,13 +122,14 @@ export const logout = () => (dispatch, getState) => {
     setUserState({
       userState: {
         email: '',
+        id: '',
         role: '',
       },
     }),
   )
   window.localStorage.setItem('app.Authorization', '')
   window.localStorage.setItem('app.Role', '')
-  dispatch(push('/login'))
+  dispatch(push('/register'))
 }
 
 const initialState = {
@@ -160,6 +159,11 @@ const initialState = {
   userState: {
     email: '',
     role: '',
+  },
+
+  // EXAM
+  examState: {
+    duration: 0
   },
 }
 

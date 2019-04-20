@@ -126,8 +126,8 @@ class MenuLeft extends React.Component {
           onClick={
             this.props.isMobile
               ? () => {
-                  dispatch(setLayoutState({ menuCollapsed: false }))
-                }
+                dispatch(setLayoutState({ menuCollapsed: false }))
+              }
               : undefined
           }
         >
@@ -136,11 +136,11 @@ class MenuLeft extends React.Component {
         </Link>
       </Menu.Item>
     ) : (
-      <Menu.Item key={key} disabled={disabled}>
-        <span className="menuLeft__item-title">{title}</span>
-        {icon && <span className={icon + ' menuLeft__icon'} />}
-      </Menu.Item>
-    )
+          <Menu.Item key={key} disabled={disabled}>
+            <span className="menuLeft__item-title">{title}</span>
+            {icon && <span className={icon + ' menuLeft__icon'} />}
+          </Menu.Item>
+        )
   }
 
   onCollapse = (value, type) => {
@@ -183,7 +183,7 @@ class MenuLeft extends React.Component {
       onCollapse: this.onCollapse,
     }
     const paramsDesktop = {
-      width: 256,
+      width: 400,
       collapsible: true,
       collapsed: collapsed,
       onCollapse: this.onCollapse,
@@ -198,10 +198,10 @@ class MenuLeft extends React.Component {
               <img src="resources/images/logo-inverse-mobile.png" alt="" />
             </div>
           ) : (
-            <div className="menuLeft__logoContainer">
-              <img src="resources/images/logo-inverse.png" alt="" />
-            </div>
-          )}
+              <div className="menuLeft__logoContainer">
+                <img src="resources/images/logo-inverse.png" alt="" />
+              </div>
+            )}
         </div>
         <Scrollbars
           autoHide
@@ -216,12 +216,6 @@ class MenuLeft extends React.Component {
             mode="inline"
             className="menuLeft__navigation"
           >
-            <Menu.Item key={'settings'}>
-              <span className="menuLeft__item-title">Theme Settings</span>
-              <span
-                className={'icmn icmn-cog menuLeft__icon utils__spin-delayed--pseudo-selector'}
-              />
-            </Menu.Item>
             {menuItems}
           </Menu>
         </Scrollbars>
