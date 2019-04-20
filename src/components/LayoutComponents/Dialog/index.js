@@ -32,7 +32,10 @@ const mapDispatchToProps = (dispatch, props) => ({
   },
 })
 
-@connect(mapStateToProps, mapDispatchToProps)
+@connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)
 class Dialog extends React.Component {
   props: {
     // own props

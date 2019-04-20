@@ -21,9 +21,8 @@ class LayoutState extends React.PureComponent {
       delete storageParams.settingsOpened
     }
     const mergedParams = merge({}, storageParams, urlParams)
-    const booleanMergedParams = JSON.parse(
-      JSON.stringify(mergedParams),
-      (key, value) => (value === 'true' ? true : value === 'false' ? false : value),
+    const booleanMergedParams = JSON.parse(JSON.stringify(mergedParams), (key, value) =>
+      value === 'true' ? true : value === 'false' ? false : value,
     )
     dispatch(setLayoutState({ ...booleanMergedParams }))
   }

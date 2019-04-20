@@ -179,7 +179,9 @@ class MailTemplates extends React.Component {
                                 If you did not forgot your password you can safely ignore his email.
                               </p>
                               <p>
-                                Regards,<br />Mediatec Software
+                                Regards,
+                                <br />
+                                Mediatec Software
                               </p>
                             </td>
                           </tr>

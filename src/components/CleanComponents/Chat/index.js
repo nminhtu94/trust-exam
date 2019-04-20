@@ -32,7 +32,9 @@ class Chat extends React.Component {
       <div className="chat">
         <div className="chat__messaging" style={{ height: 287 }}>
           <div className="chat__block">
-            {chats.map((chat, index) => <Message chat={chat} user={username} key={index} />)}
+            {chats.map((chat, index) => (
+              <Message chat={chat} user={username} key={index} />
+            ))}
           </div>
         </div>
         <form className="form-group mt-4 mb-0">

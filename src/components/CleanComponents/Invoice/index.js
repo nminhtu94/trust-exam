@@ -39,9 +39,7 @@ class Invoice extends React.Component {
         <div className="row">
           <div className="col-md-6">
             <h4 className="text-black mb-3">
-              <strong>
-                {data.senderName}
-              </strong>
+              <strong>{data.senderName}</strong>
               <br />
               <br />
               <img className="mr-2" src={data.senderLogo} height="50" alt="Amazon" />
@@ -76,9 +74,7 @@ class Invoice extends React.Component {
                 {data.invoiceNumber}
               </a>
               <br />
-              <span className="font-size-20">
-                {data.recipientName}
-              </span>
+              <span className="font-size-20">{data.recipientName}</span>
             </p>
             <address>
               {data.recipientAdress}
@@ -89,13 +85,9 @@ class Invoice extends React.Component {
               {data.recipientPhone}
               <br />
             </address>
-            <span>
-              {'Invoice Date: ' + data.invoiceDate}{' '}
-            </span>
+            <span>{'Invoice Date: ' + data.invoiceDate} </span>
             <br />
-            <span>
-              {'Due Date: ' + data.invoiceDueDate}
-            </span>
+            <span>{'Due Date: ' + data.invoiceDueDate}</span>
             <br />
             <br />
           </div>
@@ -106,17 +98,13 @@ class Invoice extends React.Component {
             <p>
               Sub - Total amount:{' '}
               <strong>
-                <span>
-                  {data.invoiceAmount}
-                </span>
+                <span>{data.invoiceAmount}</span>
               </strong>
             </p>
             <p>
               VAT:{' '}
               <strong>
-                <span>
-                  {data.invoiceVAT}
-                </span>
+                <span>{data.invoiceVAT}</span>
               </strong>
             </p>
             <p>

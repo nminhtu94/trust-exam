@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const NotFoundPage = () =>
+const NotFoundPage = () => (
   <div className="text-center">
     <div className="w-50 d-inline-block pt-5 pb-5 mt-5 mb-5">
       <h1 className="mb-4">
@@ -16,5 +16,6 @@ const NotFoundPage = () =>
       </Link>
     </div>
   </div>
+)
 
 export default NotFoundPage
