@@ -7,9 +7,11 @@
 
 # testing
 /coverage
-
+/blockchain/node_modules
+/blockchain/build
 # production
 /build
+/src/dist
 
 # misc
 .DS_Store
