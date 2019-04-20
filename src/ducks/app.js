@@ -18,6 +18,9 @@ export const addSubmitForm = createAction(`${NS}ADD_SUBMIT_FORM`)
 export const deleteSubmitForm = createAction(`${NS}DELETE_SUBMIT_FORM`)
 export const setLayoutState = createAction(`${NS}SET_LAYOUT_STATE`)
 
+// TIMER
+export const updateTimer = createAction(`${NS}UPDATE_TIMER`)
+
 export const setLoading = isLoading => {
   const action = _setLoading(isLoading)
   action[pendingTask] = isLoading ? begin : end
@@ -132,6 +135,12 @@ export const logout = () => (dispatch, getState) => {
   dispatch(push('/register'))
 }
 
+
+export const doUpdateTimer = isTimerRunning => dispatch => {
+  console.log('doUpdateTimer', isTimerRunning);
+  dispatch(updateTimer(isTimerRunning));
+}
+
 const initialState = {
   // APP STATE
   from: '',
@@ -161,10 +170,8 @@ const initialState = {
     role: '',
   },
 
-  // EXAM
-  examState: {
-    duration: 0,
-  },
+  // TIMER
+  isTimerRunning: false,
 }
 
 export default createReducer(
@@ -202,6 +209,9 @@ export default createReducer(
       delete submitForms[id]
       return { ...state, submitForms }
     },
+    [updateTimer]: (state, isTimerRunning) => {
+      return { ...state, isTimerRunning }
+    }
   },
   initialState,
 )

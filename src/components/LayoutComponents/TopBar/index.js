@@ -7,6 +7,7 @@ import ProjectManagement from './ProjectManagement'
 import BitcoinPrice from './BitcoinPrice'
 import HomeMenu from './HomeMenu'
 import LiveSearch from './LiveSearch'
+import Timer from './Timer'
 import './style.scss'
 
 const mapStateToProps = ({ app }) => {
@@ -34,6 +35,7 @@ class TopBar extends React.Component {
           </div>
         </div>
         <div className="topbar__right">
+          <Timer />
           <div className="d-inline-block mr-4" style={{ fontSize: '18px' }}>
             <Button type="primary" size="large">
               Submit

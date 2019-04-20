@@ -100,9 +100,7 @@ class Layout extends React.Component {
                 <AntHeader>
                   <TopBar />
                 </AntHeader>
-                <AntContent
-                  style={{ position: 'fixed', top: '64px', bottom: '0', overflowY: 'auto' }}
-                >
+                <AntContent>
                   <Content />
                 </AntContent>
                 {/* <AntFooter>
