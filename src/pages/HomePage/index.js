@@ -46,6 +46,7 @@ class HomePage extends React.Component {
                     style={{ width: '100%' }}
                     cover={
                       <img
+                        height="160px"
                         alt="example"
                         src="https://sabakuchsocial.files.wordpress.com/2018/03/physics.jpg?w=930&h=450&crop=1"
                       />
@@ -70,6 +71,7 @@ class HomePage extends React.Component {
                     style={{ width: '100%' }}
                     cover={
                       <img
+                        height="160px"
                         alt="example"
                         src="https://tuitionphysics.com/wp-content/uploads/2013/10/physics-exam-preparation.jpg"
                       />
@@ -94,6 +96,7 @@ class HomePage extends React.Component {
                     style={{ width: '100%' }}
                     cover={
                       <img
+                        height="160px"
                         alt="example"
                         src="https://1.bp.blogspot.com/-NCqCEIMP4ps/UOl8KQt4_II/AAAAAAAABg8/REjaQIfYhno/s1600/Physics%2BKo%2BExam-753239.jpg"
                       />
@@ -118,6 +121,7 @@ class HomePage extends React.Component {
                     style={{ width: '100%' }}
                     cover={
                       <img
+                        height="160px"
                         alt="example"
                         src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/201603/physics-647_030316125329.jpg"
                       />
