@@ -39,12 +39,13 @@ class TopBar extends React.Component {
         </div>
         <div className="topbar__right">
           {isExamPage && <Timer />}
-          {isExamPage &&
+          {isExamPage && (
             <div className="d-inline-block mr-4" style={{ fontSize: '18px' }}>
               <Button type="primary" size="large">
                 Submit
-            </Button>
-            </div>}
+              </Button>
+            </div>
+          )}
         </div>
       </div>
     )

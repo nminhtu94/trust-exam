@@ -34,15 +34,13 @@ class AppMenu extends React.Component {
     })
   }
 
-  componentWillUnmount() {
-
-  }
+  componentWillUnmount() {}
 
   render() {
     const { isMobile, location } = this.props
     const { open, isMenuTop } = this.state
 
-    if (location.pathname !== '/exam') return null;
+    if (location.pathname !== '/exam') return null
 
     return isMobile ? (
       <DrawerMenu
@@ -57,8 +55,8 @@ class AppMenu extends React.Component {
     ) : isMenuTop ? (
       <MenuTop {...this.props} />
     ) : (
-          <MenuLeft {...this.props} />
-        )
+      <MenuLeft {...this.props} />
+    )
   }
 }
 
