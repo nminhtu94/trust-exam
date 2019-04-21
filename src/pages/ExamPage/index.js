@@ -75,6 +75,7 @@ class ExamPage extends React.Component {
       console.log(error)
     });
   }
+  
 
   componentDidMount() {
     this.onGetStartTime();
