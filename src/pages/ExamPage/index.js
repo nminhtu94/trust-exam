@@ -3,9 +3,14 @@ import Page from 'components/LayoutComponents/Page'
 import Helmet from 'react-helmet'
 import Exam from './Exam'
 import Menu from 'components/LayoutComponents/Menu'
+import TopBar from 'components/LayoutComponents/TopBar'
+import { Layout as AntLayout } from 'antd'
 import { dataset } from '../../dataset/'
 
 import qs from 'querystring'
+
+const AntHeader = AntLayout.Header
+const AntContent = AntLayout.Content
 
 class ExamPage extends React.Component {
   static defaultProps = {
@@ -48,6 +53,9 @@ class ExamPage extends React.Component {
     return [
       <Menu answers={this.state.answer} key="menu" />,
       <Page {...props} key="page">
+        <AntHeader key="topBar">
+          <TopBar />
+        </AntHeader>
         <Helmet title={this.state.title} />
         <Exam questions={dataset['003XAD']} title={this.state.title} />
       </Page>,
