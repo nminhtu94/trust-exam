@@ -31,21 +31,20 @@ class Exam extends React.Component {
     setTimeout(() => doUpdateTimerAction(false), 5000)
   }
 
-  getAnswer = () => {
-    let questions = document.querySelectorAll('article')
-    let answers = []
-    questions.forEach(question => {
-      answers.push(question.getAttribute('answer') || '')
-    })
-    const result = answers.join(',')
-    return result
-  }
+  componentWillUnmount() {}
 
   render() {
     return (
       <div
         className="utils__content"
-        style={{ position: 'fixed', top: '64px', bottom: '0', overflowY: 'auto' }}
+        style={{
+          position: 'fixed',
+          top: '64px',
+          bottom: '0',
+          left: '200px',
+          right: '0',
+          overflowY: 'auto',
+        }}
       >
         <section className="card">
           <div className="card-header">

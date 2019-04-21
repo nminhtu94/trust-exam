@@ -114,33 +114,18 @@ class MenuLeft extends React.Component {
     })
   }
 
-  generateMenuItem(item) {
-    const { key, title, url, icon, disabled } = item
-    const { dispatch } = this.props
-    return item.divider ? (
-      <Divider key={Math.random()} />
-    ) : item.url ? (
-      <Menu.Item key={key} disabled={disabled}>
-        <Link
-          to={url}
-          onClick={
-            this.props.isMobile
-              ? () => {
-                  dispatch(setLayoutState({ menuCollapsed: false }))
-                }
-              : undefined
-          }
-        >
-          <span className="menuLeft__item-title">{title}</span>
-          {icon && <span className={icon + ' menuLeft__icon'} />}
-        </Link>
-      </Menu.Item>
-    ) : (
-      <Menu.Item key={key} disabled={disabled}>
-        <span className="menuLeft__item-title">{title}</span>
-        {icon && <span className={icon + ' menuLeft__icon'} />}
-      </Menu.Item>
-    )
+  generateMenuItem(answers) {
+    return (
+      answers && answers.map((answer, index) => (
+        <Menu.Item
+          key={Math.random().toString(36)}
+          disabled={false}
+          onClick={() => document.getElementById("question-cell" + (index + 1)).scrollIntoView()}>
+          <b className="menuLeft__item-title" style={{ width: 30 }}>{index + 1}. </b>
+          <span>{answer === '' ? '__' : String.fromCharCode(65 + parseInt(answer))}</span>
+        </Menu.Item>
+      ))
+    );
   }
 
   onCollapse = (value, type) => {
@@ -175,7 +160,7 @@ class MenuLeft extends React.Component {
   render() {
     const { collapsed, selectedKeys, openKeys, theme } = this.state
     const { isMobile } = this.props
-    const menuItems = this.generateMenuPartitions(menuData)
+    const menuItems = this.generateMenuItem(this.props.answers)
     const paramsMobile = {
       width: 256,
       collapsible: false,
@@ -183,7 +168,7 @@ class MenuLeft extends React.Component {
       onCollapse: this.onCollapse,
     }
     const paramsDesktop = {
-      width: 400,
+      width: 200,
       collapsible: false,
       collapsed: false,
       onCollapse: this.onCollapse,
