@@ -57,7 +57,8 @@ class Timer extends React.Component {
   }
 
   componentWillUnmount() {
-    if (this._timer) clearInterval(this._timer)
+    if (this._timer) clearInterval(this._timer);
+    if (this.interval) clearInterval(this.interval);
   }
 
   formatExpiresTime = seconds => {
@@ -86,8 +87,8 @@ class Timer extends React.Component {
 
   render() {
     const time = this.calculate()
-
-    const timeLeft = parseInt((1555825126392 - new Date().getTime()) / 1000)
+    const timeUpAt = 1555825126392;
+    const timeLeft = parseInt((timeUpAt - new Date().getTime()) / 1000)
     const isExpired = timeLeft < 0
 
     return (
