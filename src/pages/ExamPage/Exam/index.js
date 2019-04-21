@@ -7,7 +7,7 @@ import './style.scss'
 import { doUpdateTimer } from '../../../ducks/app'
 
 import { dataset } from '../../../dataset/'
-import QuestionObject from './QuestionObject';
+import QuestionObject from './QuestionObject'
 
 const mapStateToProps = state => ({})
 
@@ -21,13 +21,12 @@ const mapDispatchToProps = {
 )
 class Exam extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
 
-    console.log(dataset);
-    this.questions = dataset['003XAD'];
-    console.log(this.questions);
+    console.log(dataset)
+    this.questions = dataset['003XAD']
+    console.log(this.questions)
   }
-
 
   componentDidMount() {
     console.log('componentDidMount Exam')
@@ -50,15 +49,13 @@ class Exam extends React.Component {
             </div>
           </div>
           <div className="card-body">
-            {
-              this.questions.map((question, index) => (
-                <QuestionCell
-                  questionNumber={index + 1}
-                  question={QuestionObject.fromJSON(question)}
-                  key={Math.random().toString(36)}
-                />)
-              )
-            }
+            {this.questions.map((question, index) => (
+              <QuestionCell
+                questionNumber={index + 1}
+                question={QuestionObject.fromJSON(question)}
+                key={Math.random().toString(36)}
+              />
+            ))}
           </div>
         </section>
       </div>

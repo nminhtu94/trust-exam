@@ -1,1 +1,1 @@
-export { default as dataset } from './questions.json';
+export { default as dataset } from './questions.json'
