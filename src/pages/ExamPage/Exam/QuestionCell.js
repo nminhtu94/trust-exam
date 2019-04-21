@@ -31,7 +31,7 @@ class QuestionCell extends Component {
       lineHeight: '30px',
     }
     return (
-      <Typography>
+      <Typography answer={this.state.selectedAnswer}>
         <Paragraph>
           {<b>{this.props.questionNumber + '. '}</b>}
           {this.props.question.desc}
