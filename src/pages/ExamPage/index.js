@@ -18,7 +18,7 @@ class ExamPage extends React.Component {
       <Page {...props}>
         <Helmet title="Exam Page" />
         <Exam questions={dataset['003XAD']} />
-      </Page>
+      </Page>,
     ]
   }
 }

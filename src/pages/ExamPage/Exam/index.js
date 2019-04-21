@@ -20,7 +20,7 @@ const mapDispatchToProps = {
 )
 class Exam extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
 
   componentDidMount() {
@@ -32,11 +32,13 @@ class Exam extends React.Component {
   }
 
   getAnswer = () => {
-    let questions = document.querySelectorAll('article');
-    let answers = [];
-    questions.forEach(question => { answers.push(question.getAttribute('answer') || '') })
+    let questions = document.querySelectorAll('article')
+    let answers = []
+    questions.forEach(question => {
+      answers.push(question.getAttribute('answer') || '')
+    })
     const result = answers.join(',')
-    return result;
+    return result
   }
 
   render() {
