@@ -65,8 +65,9 @@ class ExamPage extends React.Component {
 
   submitRaw = () => {
     const { finalAnswer } = this.state;
+    console.log(finalAnswer)
     this.setState({answers: finalAnswer});
-    this.trustExam.submitRawAnswer(finalAnswer)
+    this.trustExam.submitRawAnswer(finalAnswer.join(','))
     .then(hash => {
       this.setState({hash: hash});
     }).catch(error => {
