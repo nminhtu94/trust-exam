@@ -4,8 +4,6 @@ import { Spinner } from 'react-redux-spinner'
 import { BackTop, Layout as AntLayout } from 'antd'
 import Routes from 'routes'
 import TopBar from 'components/LayoutComponents/TopBar'
-import Footer from 'components/LayoutComponents/Footer'
-import Menu from 'components/LayoutComponents/Menu'
 import Content from 'components/LayoutComponents/Content'
 import Loader from 'components/LayoutComponents/Loader'
 import LayoutState from 'components/LayoutComponents/LayoutState'
@@ -95,9 +93,6 @@ class Layout extends React.Component {
               <BackTop />
               <Routes />
               <AntLayout>
-                <AntHeader>
-                  <TopBar />
-                </AntHeader>
                 <AntContent>
                   <Content />
                 </AntContent>

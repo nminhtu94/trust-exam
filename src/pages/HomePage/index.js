@@ -13,9 +13,9 @@ class HomePage extends React.Component {
     roles: ['agent', 'administrator'],
   }
 
-  handleOnclick = () => {
+  handleOnclick = title => {
     const { history } = this.props
-    history.push('/exam')
+    history.push('/exam?title=' + title)
   }
 
   render() {
@@ -36,7 +36,7 @@ class HomePage extends React.Component {
           <section className="card">
             <div className="card-header">
               <div className="utils__title">
-                <strong>Home Page</strong>
+                <strong>TrExam</strong>
               </div>
             </div>
             <div className="card-body">
@@ -52,7 +52,9 @@ class HomePage extends React.Component {
                       />
                     }
                     actions={[
-                      <span onClick={this.handleOnclick}>
+                      <span
+                        onClick={() => this.handleOnclick('Physics A - University Entrance Exam')}
+                      >
                         <Icon type="edit" />
                       </span>,
                     ]}
@@ -61,8 +63,8 @@ class HomePage extends React.Component {
                       avatar={
                         <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
                       }
-                      title="Card title"
-                      description="This is the description"
+                      title="Physics A - University Entrance Exam"
+                      description=""
                     />
                   </Card>
                 </div>
@@ -77,7 +79,9 @@ class HomePage extends React.Component {
                       />
                     }
                     actions={[
-                      <span onClick={this.handleOnclick}>
+                      <span
+                        onClick={() => this.handleOnclick('Physics B - University Entrance Exam')}
+                      >
                         <Icon type="edit" />
                       </span>,
                     ]}
@@ -86,8 +90,8 @@ class HomePage extends React.Component {
                       avatar={
                         <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
                       }
-                      title="Card title"
-                      description="This is the description"
+                      title="Physics B - University Entrance Exam"
+                      description=""
                     />
                   </Card>
                 </div>
@@ -102,7 +106,9 @@ class HomePage extends React.Component {
                       />
                     }
                     actions={[
-                      <span onClick={this.handleOnclick}>
+                      <span
+                        onClick={() => this.handleOnclick('Physics C - University Entrance Exam')}
+                      >
                         <Icon type="edit" />
                       </span>,
                     ]}
@@ -111,8 +117,8 @@ class HomePage extends React.Component {
                       avatar={
                         <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
                       }
-                      title="Card title"
-                      description="This is the description"
+                      title="Physics C - University Entrance Exam"
+                      description=""
                     />
                   </Card>
                 </div>
@@ -127,7 +133,9 @@ class HomePage extends React.Component {
                       />
                     }
                     actions={[
-                      <span onClick={this.handleOnclick}>
+                      <span
+                        onClick={() => this.handleOnclick('Physics D - University Entrance Exam')}
+                      >
                         <Icon type="edit" />
                       </span>,
                     ]}
@@ -136,8 +144,8 @@ class HomePage extends React.Component {
                       avatar={
                         <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
                       }
-                      title="Card title"
-                      description="This is the description"
+                      title="Physics D - University Entrance Exam"
+                      description=""
                     />
                   </Card>
                 </div>
