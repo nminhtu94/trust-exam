@@ -1,13 +1,13 @@
 'use strict'
 var HDWalletProvider = require("truffle-hdwallet-provider");
 var mnemonic = 'tenant wash inside group deposit honey draft math media lunch swing drink';
-var rinkebyMnemonic = 'tenant wash inside group deposit honey draft math media lunch swing drink';
+var rinkebyMnemonic = 'robot lunar grace crazy nerve erode wheel middle actress damp embody measure';
 
 const providerWithMnemonic = (mnemonic, rpcEndpoint) =>
   new HDWalletProvider(mnemonic, rpcEndpoint, 0, 1); //, process.env.PASSWORD);
   
 const infuraProvider = network => providerWithMnemonic(
-  'robot lunar grace crazy nerve erode wheel middle actress damp embody measure',
+  rinkebyMnemonic,
   `https://${network}.infura.io/V41ku14YR3nX4FYP1Zdx`
 );
 
