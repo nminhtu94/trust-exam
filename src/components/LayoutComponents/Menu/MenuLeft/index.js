@@ -179,7 +179,7 @@ class MenuLeft extends React.Component {
       <Sider {...params} className="menuLeft">
         <Scrollbars
           autoHide
-          style={{ height: isMobile ? 'calc(100vh - 64px)' : 'calc(100vh - 112px)' }}
+          style={{ height: isMobile ? 'calc(100vh - 30px)' : 'calc(100vh - 30px)' }}
         >
           <Menu
             theme={theme}
