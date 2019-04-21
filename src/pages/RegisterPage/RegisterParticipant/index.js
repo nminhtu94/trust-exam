@@ -62,7 +62,7 @@ class Exam extends React.Component {
         }}
       >
         <div>
-          <h1><b> Register </b></h1>
+          <h1 style={{marginBottom: 30}}><b> Register </b></h1>
           <span><p> (*) End time for register participant: {startTime}</p></span>
           <section className="card" style={{ width: '100%' }}>
             <div className="ant-row ant-form-item">
