@@ -95,6 +95,19 @@ class TrustExam extends ContractAPI {
     })
   }
 
+  results(address) {
+    let self = this
+    return new Promise((resolve, reject) => {
+      self.contract.instance.results(
+        address,
+        (error, result) => {
+          if (error) reject(error)
+          else resolve({hash: result[0], raw: result[1],});
+        },
+      )
+    })
+  }
+
   submitRawAnswer(rawAnswer) {
     let self = this
     return new Promise((resolve, reject) => {
