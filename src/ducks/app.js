@@ -63,7 +63,7 @@ export const initAuth = roles => (dispatch, getState) => {
     )
     if (!roles.find(role => role === userRole)) {
       if (!(state.routing.location.pathname === '/exam')) {
-        dispatch(push('/exam'))
+        dispatch(push('/home'))
       }
       return Promise.resolve(false)
     }
@@ -93,7 +93,7 @@ export function login(username, password, dispatch) {
     window.localStorage.setItem('app.Authorization', '')
     window.localStorage.setItem('app.Role', 'administrator')
     dispatch(_setHideLogin(true))
-    dispatch(push('/exam'))
+    dispatch(push('/home'))
     notification.open({
       type: 'success',
       message: 'You have successfully register!',
