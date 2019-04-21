@@ -30,6 +30,9 @@ const loadableRoutes = {
   '/register-participant': {
     component: loadable(() => import('pages/RegisterPage')),
   },
+  '/home': {
+    component: loadable(() => import('pages/HomePage')),
+  },
 
   // '/exam': {
   //   component: loadable(() => import('pages/RegisterPage')),

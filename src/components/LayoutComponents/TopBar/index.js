@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 import { Button } from 'antd'
 import ProfileMenu from './ProfileMenu'
 import IssuesHistory from './IssuesHistory'
@@ -18,10 +19,12 @@ const mapStateToProps = ({ app }) => {
   }
 }
 
+@withRouter
 @connect(mapStateToProps)
 class TopBar extends React.Component {
   render() {
-    const { fullName, idNumber } = this.props
+    const { fullName, idNumber, location } = this.props
+    const isExamPage = location.pathname === '/exam'
     return (
       <div className="topbar">
         <div className="topbar__left">
@@ -35,23 +38,14 @@ class TopBar extends React.Component {
           </div>
         </div>
         <div className="topbar__right">
-          <Timer />
-          <div className="d-inline-block mr-4" style={{ fontSize: '18px' }}>
-            <Button type="primary" size="large">
-              Submit
-            </Button>
-          </div>
-          {/* <a
-            href="https://themeforest.net/item/clean-ui-admin-template-react-redux-ant-design-fully-responsive-freebies/21938700"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mr-4 d-none d-sm-inline"
-          >
-            <Button type="danger">Buy Now 25$</Button>
-          </a> */}
-          {/* <BitcoinPrice />
-          <HomeMenu />
-          <ProfileMenu /> */}
+          {isExamPage && <Timer />}
+          {isExamPage && (
+            <div className="d-inline-block mr-4" style={{ fontSize: '18px' }}>
+              <Button type="primary" size="large">
+                Submit
+              </Button>
+            </div>
+          )}
         </div>
       </div>
     )

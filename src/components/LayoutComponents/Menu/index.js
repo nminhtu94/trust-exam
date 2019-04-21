@@ -1,4 +1,5 @@
 import 'rc-drawer/assets/index.css'
+import { withRouter } from 'react-router-dom'
 import React from 'react'
 import DrawerMenu from 'rc-drawer'
 import { MenuLeft } from './MenuLeft'
@@ -12,6 +13,7 @@ const mapStateToProps = ({ app }, props) => ({
   isMenuTop: app.layoutState.isMenuTop,
 })
 
+@withRouter
 @connect(mapStateToProps)
 class AppMenu extends React.Component {
   state = {
@@ -32,9 +34,14 @@ class AppMenu extends React.Component {
     })
   }
 
+  componentWillUnmount() {}
+
   render() {
-    const { isMobile } = this.props
+    const { isMobile, location } = this.props
     const { open, isMenuTop } = this.state
+
+    if (location.pathname !== '/exam') return null
+
     return isMobile ? (
       <DrawerMenu
         getContainer={null}

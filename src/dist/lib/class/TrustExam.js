@@ -100,4 +100,4 @@ class TrustExam extends ContractAPI {
   }
 }
 
-export default TrustExam;
+export default TrustExam
