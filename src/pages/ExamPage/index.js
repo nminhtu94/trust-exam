@@ -36,8 +36,13 @@ class ExamPage extends React.Component {
     questions.forEach(question => {
       answers.push(question.getAttribute('answer') || '')
     })
-    // const result = answers.join(',')
     return answers
+  }
+
+  submit = () => {
+    console.log('Submit');
+    const answers = this.getAnswer();
+    const answerString = answers.join(',');
   }
 
   componentDidMount() {
@@ -54,7 +59,7 @@ class ExamPage extends React.Component {
       <Menu answers={this.state.answer} key="menu" />,
       <Page {...props} key="page">
         <AntHeader key="topBar">
-          <TopBar />
+          <TopBar onSubmit={this.submit} />
         </AntHeader>
         <Helmet title={this.state.title} />
         <Exam questions={dataset['003XAD']} title={this.state.title} />
