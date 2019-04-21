@@ -30,7 +30,7 @@ class Exam extends React.Component {
     this.state = {
       examIDs: [],
       selectedExamID: '',
-      participantAddress: '',
+      participantAddress: '0xD7ED16c081630415aDdE3E31a46C6893C69eaAD9',
     }
 
     this.onLoadExamIds = this.onLoadExamIds.bind(this)

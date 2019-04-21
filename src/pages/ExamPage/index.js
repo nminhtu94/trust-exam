@@ -35,6 +35,7 @@ class ExamPage extends React.Component {
     this.state = {
       answers: [],
       title: params['?title'] || 'Computer Science',
+      finalAnswer: "",
     }
   }
 
@@ -50,7 +51,7 @@ class ExamPage extends React.Component {
   submit = () => {
     const answers = this.getAnswer();
     const answerString = answers.join(',');
-    this.setState({finalAnswer: answerString});
+    this.setState({finalAnswer: answers});
     const hashAnswer = Hasher(answerString);
     console.log(hashAnswer);
     this.trustExam.submitHashAnswer(hashAnswer)
@@ -64,6 +65,7 @@ class ExamPage extends React.Component {
 
   submitRaw = () => {
     const { finalAnswer } = this.state;
+    this.setState({answers: finalAnswer});
     this.trustExam.submitRawAnswer(finalAnswer)
     .then(hash => {
       this.setState({hash: hash});
@@ -114,26 +116,6 @@ class ExamPage extends React.Component {
     }).catch(error => {
       console.log(error)
       this.setState({endTime: null});
-    })
-  }
-  
-  onSubmitHashAnswer = () => {
-    this.trustExam.submitHashAnwser()
-    .then(result => {
-      this.setstate({hash: result});
-    }).catch(error => {
-      console.log(error)
-      this.setState({hash: null});
-    })
-  }
-  
-  onSubmitRawAnswer = () => {
-    this.trustExam.submitRawAnwser()
-    .then(result => {
-      this.setstate({hash: result});
-    }).catch(error => {
-      console.log(error)
-      this.setState({hash: null});
     })
   }
 }

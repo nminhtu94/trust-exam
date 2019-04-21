@@ -10,6 +10,11 @@ import HomeMenu from './HomeMenu'
 import LiveSearch from './LiveSearch'
 import Timer from './Timer'
 import './style.scss'
+import classes from 'dist/'
+const { Metamask, TrustExam } = classes
+const config = require('../../../config')
+
+const ADDRESS = require('../../../' + config.default.blockchain.addressPath + '/TrustExam.json')
 
 const mapStateToProps = ({ app }) => {
   const { userState } = app
@@ -22,8 +27,30 @@ const mapStateToProps = ({ app }) => {
 @withRouter
 @connect(mapStateToProps)
 class TopBar extends React.Component {
+  constructor() {
+    super();
+    this.metamask = new Metamask()
+    this.trustExam = new TrustExam(ADDRESS, this.metamask.web3);
+    this.state = {
+      startTime: 0,
+      endTime: 0,
+    }
+  }
+
+  componentDidMount() {
+    this.interval = setInterval(() => {
+      this.forceUpdate()
+    }, 1000)
+    this.onGetEndTime();
+    this.onGetStartTime();
+  }
+
   render() {
     const { fullName, idNumber, location } = this.props
+    const { startTime, endTime } = this.state;
+
+    const startLeft = parseInt((startTime - new Date().getTime()/1000))
+    const endLeft = parseInt((endTime - new Date().getTime()/1000))
     const isExamPage = location.pathname === '/exam'
     return (
       <div className="topbar">
@@ -38,20 +65,41 @@ class TopBar extends React.Component {
           </div>
         </div>
         <div className="topbar__right">
-          {isExamPage && <Timer />}
+          {isExamPage && startLeft < 0 && endLeft >0  && <Timer />}
           {isExamPage && (
             <div className="d-inline-block mr-8" style={{ fontSize: '18px' }}>
-              <Button type="primary" size="large" onClick={this.props.onSubmit}>
+
+              {startLeft < 0 && endLeft >0 &&<Button type="primary" size="large" onClick={this.props.onSubmit}>
                 Submit
-              </Button>
-              <Button type="primary" size="large" onClick={this.props.onSubmitRaw} style={{marginLeft: "10px"}}>
+              </Button>}
+              {endLeft < 0 && <Button type="primary" size="large" onClick={this.props.onSubmitRaw} style={{marginLeft: "10px"}}>
                 Submit Final
-              </Button>
+              </Button>}
             </div>
           )}
         </div>
       </div>
     )
+  }
+
+
+  onGetStartTime = () => {
+    this.trustExam.startTime()
+    .then(startTime => {
+      this.setState({startTime: startTime});
+    }).catch(error => {
+      console.log(error)
+    });
+  }
+
+  onGetEndTime = () => {
+    this.trustExam.endTime()
+    .then(endTime => {
+      console.log(endTime)
+      this.setState({endTime: endTime});
+    }).catch(error => {
+      console.log(error)
+    });
   }
 }
 
