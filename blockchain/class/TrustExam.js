@@ -1,5 +1,5 @@
-const TRUST_EXAM_ABI = require('../../abi/TrustExam.json');
-const ContractAPI = require('../contract_api/contract_api');
+const TRUST_EXAM_ABI = require('../abi/TrustExam.json');
+const ContractAPI = require('./ContractAPI');
 
 class TrustExam extends ContractAPI {
   constructor(TRUST_EXAM_ADDRESS, web3Instance) {

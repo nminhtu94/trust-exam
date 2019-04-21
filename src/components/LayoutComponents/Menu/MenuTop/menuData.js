@@ -11,4 +11,10 @@ export default [
     url: '/empty',
     icon: 'icmn icmn-books',
   },
+  {
+    title: 'Register Participant',
+    key: 'registerParticipant',
+    url: '/register-participant',
+    icon: 'icmn icmn-stack',
+  },
 ]

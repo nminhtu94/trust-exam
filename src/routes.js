@@ -28,6 +28,10 @@ const loadableRoutes = {
     component: loadable(() => import('pages/ExamPage')),
   },
 
+  // '/exam': {
+  //   component: loadable(() => import('pages/RegisterPage')),
+  // },
+
   // Dashboards
   // '/dashboard/alpha': {
   //   component: loadable(() => import('pages/Dashboard/DashboardAlphaPage')),
