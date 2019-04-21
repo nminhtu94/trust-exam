@@ -5,6 +5,8 @@ import Exam from './Exam'
 import Menu from 'components/LayoutComponents/Menu'
 import { dataset } from '../../dataset/'
 
+import qs from 'querystring';
+
 class ExamPage extends React.Component {
   static defaultProps = {
     pathName: 'Empty Page',
@@ -14,9 +16,13 @@ class ExamPage extends React.Component {
   constructor(props) {
     super(props);
 
+    const params = qs.parse(props.location.search);
+    console.log(params);
+
     this.state = {
-      answers: []
-    };
+      answers: [],
+      title: params['?title'] || 'Computer Science'
+    }
   }
 
   getAnswer = () => {
@@ -26,24 +32,24 @@ class ExamPage extends React.Component {
       answers.push(question.getAttribute('answer') || '')
     })
     // const result = answers.join(',')
-    return answers;
+    return answers
   }
 
   componentDidMount() {
     setInterval(() => {
       this.setState({
-        answer: this.getAnswer()
+        answer: this.getAnswer(),
       })
-    }, 500);
+    }, 500)
   }
 
   render() {
     const props = this.props
     return [
-      <Menu answers={this.state.answer} />,
-      <Page {...props}>
-        <Helmet title="Exam Page" />
-        <Exam questions={dataset['003XAD']} />
+      <Menu answers={this.state.answer} key="menu" />,
+      <Page {...props} key="page">
+        <Helmet title={this.state.title} />
+        <Exam questions={dataset['003XAD']} title={this.state.title} />
       </Page>,
     ]
   }

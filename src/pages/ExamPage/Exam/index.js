@@ -31,7 +31,7 @@ class Exam extends React.Component {
     setTimeout(() => doUpdateTimerAction(false), 5000)
   }
 
-  componentWillUnmount() {}
+  componentWillUnmount() { }
 
   render() {
     return (
@@ -49,7 +49,7 @@ class Exam extends React.Component {
         <section className="card">
           <div className="card-header">
             <div className="utils__title">
-              <strong>Empty Page</strong>
+              <strong>{this.props.title}</strong>
             </div>
           </div>
           <div className="card-body">
