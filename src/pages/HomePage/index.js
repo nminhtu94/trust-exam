@@ -13,7 +13,7 @@ class HomePage extends React.Component {
     roles: ['agent', 'administrator'],
   }
 
-  handleOnclick = (title) => {
+  handleOnclick = title => {
     const { history } = this.props
     history.push('/exam?title=' + title)
   }
@@ -52,7 +52,9 @@ class HomePage extends React.Component {
                       />
                     }
                     actions={[
-                      <span onClick={() => this.handleOnclick("Physics A - University Entrance Exam")}>
+                      <span
+                        onClick={() => this.handleOnclick('Physics A - University Entrance Exam')}
+                      >
                         <Icon type="edit" />
                       </span>,
                     ]}
@@ -77,7 +79,9 @@ class HomePage extends React.Component {
                       />
                     }
                     actions={[
-                      <span onClick={() => this.handleOnclick("Physics B - University Entrance Exam")}>
+                      <span
+                        onClick={() => this.handleOnclick('Physics B - University Entrance Exam')}
+                      >
                         <Icon type="edit" />
                       </span>,
                     ]}
@@ -102,7 +106,9 @@ class HomePage extends React.Component {
                       />
                     }
                     actions={[
-                      <span onClick={() => this.handleOnclick("Physics C - University Entrance Exam")}>
+                      <span
+                        onClick={() => this.handleOnclick('Physics C - University Entrance Exam')}
+                      >
                         <Icon type="edit" />
                       </span>,
                     ]}
@@ -127,7 +133,9 @@ class HomePage extends React.Component {
                       />
                     }
                     actions={[
-                      <span onClick={() => this.handleOnclick("Physics D - University Entrance Exam")}>
+                      <span
+                        onClick={() => this.handleOnclick('Physics D - University Entrance Exam')}
+                      >
                         <Icon type="edit" />
                       </span>,
                     ]}
