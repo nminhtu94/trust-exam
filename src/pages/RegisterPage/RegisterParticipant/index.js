@@ -49,24 +49,46 @@ class Exam extends React.Component {
     return (
       <div
         className="utils__content"
-        style={{ position: 'fixed', top: '64px', bottom: '0', overflowY: 'auto' }}
+        style={{
+          position: 'fixed',
+          top: '64px',
+          bottom: '200',
+          overflowY: 'auto',
+          left: '300px',
+          right: '300px',
+          padding: '100px',
+          background: '#ffffff',
+          borderRadius: '15px'
+        }}
       >
-        <section className="card" style={{ width: '100%' }}>
-          <p>End time for register participant: {startTime}</p>
-          <Input
-            value={this.state.participantAddress}
-            onChange={this.handleTextChange}
-            name="participantAddress"
-            placeholder="Participant address"
-          />
-          <Select style={{ width: '100%' }} onChange={index => this.onSelectExamID(index)}>
-            <Option key={0}>---Select exam id---</Option>
-            {examIDs.map((examIdD, index) => {
-              return <Option key={index + 1}>{examIdD}</Option>
-            })}
-          </Select>
-          <Button onClick={this.registerParticipant}>Register participant</Button>
-        </section>
+        <div>
+          <h1><b> Register </b></h1>
+          <span><p> (*) End time for register participant: {startTime}</p></span>
+          <section className="card" style={{ width: '100%' }}>
+            <div className="ant-row ant-form-item">
+              <label class="ant-form-item-required" title="participantAddress">Participant Address:</label>
+              <Input
+                value={this.state.participantAddress}
+                onChange={this.handleTextChange}
+                name="participantAddress"
+                placeholder="Participant address"
+                className="ant-input"
+              />
+            </div>
+
+            <div className="ant-row ant-form-item">
+              <label class="ant-form-item-required" title="ExamID">Exam ID:</label>
+              <Select style={{ width: '100%' }} onChange={index => this.onSelectExamID(index)} className="ant-input">
+                <Option key={0}>---Select exam id---</Option>
+                {examIDs.map((examIdD, index) => {
+                  return <Option key={index + 1}>{examIdD}</Option>
+                })}
+              </Select>
+            </div>
+
+            <Button onClick={this.registerParticipant} className="ant-btn width-100p mr-4 ant-btn-primary"><span>Register participant</span></Button>
+          </section>
+        </div>
       </div>
     )
   }
