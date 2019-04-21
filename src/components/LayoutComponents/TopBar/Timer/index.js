@@ -71,14 +71,14 @@ class Timer extends React.Component {
       parseInt(_seconds / secondInHour) >= 10
         ? parseInt(_seconds / secondInHour)
         : `0${parseInt(_seconds / secondInHour)}`
-      }:`
+    }:`
     _seconds %= secondInHour
 
     text += `${
       parseInt(_seconds / secondInMinute) >= 10
         ? parseInt(_seconds / secondInMinute)
         : `0${parseInt(_seconds / secondInMinute)}`
-      }:`
+    }:`
     _seconds %= secondInMinute
 
     text += _seconds >= 10 ? _seconds : `0${_seconds}`
