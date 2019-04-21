@@ -13,7 +13,7 @@ class ExamPage extends React.Component {
     const props = this.props
     return (
       <Page {...props}>
-        <Helmet title="Exam Page" />
+        <Helmet title="Register Page" />
         <RegisterParticipant />
       </Page>
     )
