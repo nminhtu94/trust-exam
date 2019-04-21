@@ -87,7 +87,7 @@ class Timer extends React.Component {
 
   render() {
     const time = this.calculate()
-    const timeUpAt = 1555825126392
+    const timeUpAt = 1555836129392
     const timeLeft = parseInt((timeUpAt - new Date().getTime()) / 1000)
     const isExpired = timeLeft < 0
 
