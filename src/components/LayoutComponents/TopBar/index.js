@@ -44,7 +44,7 @@ class TopBar extends React.Component {
               <Button type="primary" size="large" onClick={this.props.onSubmit}>
                 Submit
               </Button>
-              <Button type="primary" size="large" onClick={this.props.onSubmitRaw}>
+              <Button type="primary" size="large" onClick={this.props.onSubmitRaw} style={{marginLeft: "10px"}}>
                 Submit Final
               </Button>
             </div>

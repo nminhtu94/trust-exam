@@ -52,7 +52,8 @@ class ExamPage extends React.Component {
     const answerString = answers.join(',');
     this.setState({finalAnswer: answerString});
     const hashAnswer = Hasher(answerString);
-    this.trustExam.submitHashAnwser(hashAnswer)
+    console.log(hashAnswer);
+    this.trustExam.submitHashAnswer(hashAnswer)
     .then(hash => {
       this.setState({hash: hash});
     }).catch(error => {
