@@ -31,7 +31,7 @@ class Exam extends React.Component {
     setTimeout(() => doUpdateTimerAction(false), 5000)
   }
 
-  componentWillUnmount() { }
+  componentWillUnmount() {}
 
   render() {
     return (

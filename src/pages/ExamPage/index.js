@@ -5,7 +5,7 @@ import Exam from './Exam'
 import Menu from 'components/LayoutComponents/Menu'
 import { dataset } from '../../dataset/'
 
-import qs from 'querystring';
+import qs from 'querystring'
 
 class ExamPage extends React.Component {
   static defaultProps = {
@@ -14,14 +14,14 @@ class ExamPage extends React.Component {
   }
 
   constructor(props) {
-    super(props);
+    super(props)
 
-    const params = qs.parse(props.location.search);
-    console.log(params);
+    const params = qs.parse(props.location.search)
+    console.log(params)
 
     this.state = {
       answers: [],
-      title: params['?title'] || 'Computer Science'
+      title: params['?title'] || 'Computer Science',
     }
   }
 
