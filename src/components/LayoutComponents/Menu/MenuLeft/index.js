@@ -126,8 +126,8 @@ class MenuLeft extends React.Component {
           onClick={
             this.props.isMobile
               ? () => {
-                  dispatch(setLayoutState({ menuCollapsed: false }))
-                }
+                dispatch(setLayoutState({ menuCollapsed: false }))
+              }
               : undefined
           }
         >
@@ -136,11 +136,11 @@ class MenuLeft extends React.Component {
         </Link>
       </Menu.Item>
     ) : (
-      <Menu.Item key={key} disabled={disabled}>
-        <span className="menuLeft__item-title">{title}</span>
-        {icon && <span className={icon + ' menuLeft__icon'} />}
-      </Menu.Item>
-    )
+          <Menu.Item key={key} disabled={disabled}>
+            <span className="menuLeft__item-title">{title}</span>
+            {icon && <span className={icon + ' menuLeft__icon'} />}
+          </Menu.Item>
+        )
   }
 
   onCollapse = (value, type) => {
@@ -184,25 +184,14 @@ class MenuLeft extends React.Component {
     }
     const paramsDesktop = {
       width: 400,
-      collapsible: true,
-      collapsed: collapsed,
+      collapsible: false,
+      collapsed: false,
       onCollapse: this.onCollapse,
       breakpoint: 'lg',
     }
     const params = isMobile ? paramsMobile : paramsDesktop
     return (
       <Sider {...params} className="menuLeft">
-        <div className="menuLeft__logo">
-          {params.collapsed ? (
-            <div className="menuLeft__logoContainer menuLeft__logoContainer--collapsed">
-              <img src="resources/images/logo-inverse-mobile.png" alt="" />
-            </div>
-          ) : (
-            <div className="menuLeft__logoContainer">
-              <img src="resources/images/logo-inverse.png" alt="" />
-            </div>
-          )}
-        </div>
         <Scrollbars
           autoHide
           style={{ height: isMobile ? 'calc(100vh - 64px)' : 'calc(100vh - 112px)' }}

@@ -6,7 +6,6 @@ import QuestionCell from './QuestionCell'
 import './style.scss'
 import { doUpdateTimer } from '../../../ducks/app'
 
-import { dataset } from '../../../dataset/'
 import QuestionObject from './QuestionObject'
 
 const mapStateToProps = state => ({})
@@ -21,11 +20,7 @@ const mapDispatchToProps = {
 )
 class Exam extends React.Component {
   constructor(props) {
-    super(props)
-
-    console.log(dataset)
-    this.questions = dataset['003XAD']
-    console.log(this.questions)
+    super(props);
   }
 
   componentDidMount() {
@@ -34,6 +29,14 @@ class Exam extends React.Component {
     doUpdateTimerAction(true)
 
     setTimeout(() => doUpdateTimerAction(false), 5000)
+  }
+
+  getAnswer = () => {
+    let questions = document.querySelectorAll('article');
+    let answers = [];
+    questions.forEach(question => { answers.push(question.getAttribute('answer') || '') })
+    const result = answers.join(',')
+    return result;
   }
 
   render() {
@@ -49,7 +52,7 @@ class Exam extends React.Component {
             </div>
           </div>
           <div className="card-body">
-            {this.questions.map((question, index) => (
+            {this.props.questions.map((question, index) => (
               <QuestionCell
                 questionNumber={index + 1}
                 question={QuestionObject.fromJSON(question)}
