@@ -40,9 +40,9 @@ class ExamPage extends React.Component {
   }
 
   submit = () => {
-    console.log('Submit');
-    const answers = this.getAnswer();
-    const answerString = answers.join(',');
+    console.log('Submit')
+    const answers = this.getAnswer()
+    const answerString = answers.join(',')
   }
 
   componentDidMount() {
