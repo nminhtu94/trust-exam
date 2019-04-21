@@ -94,8 +94,6 @@ class Layout extends React.Component {
               <Spinner />
               <BackTop />
               <Routes />
-              <Menu isMobile={isMobile} />
-              {/* <SettingsSider /> */}
               <AntLayout>
                 <AntHeader>
                   <TopBar />
@@ -103,9 +101,6 @@ class Layout extends React.Component {
                 <AntContent>
                   <Content />
                 </AntContent>
-                {/* <AntFooter>
-                  <Footer />
-                </AntFooter> */}
               </AntLayout>
             </AntLayout>
           </div>
