@@ -11,7 +11,7 @@
 /blockchain/build
 # production
 /build
-/src/dist
+# /src/dist
 
 # misc
 .DS_Store
