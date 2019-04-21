@@ -1,8 +1,9 @@
 /**
  * Client JS library
  */
-var Metamask = require("./lib/class/metamask");
-var TrustExam = require("./lib/class/TrustExam");
+import Metamask from "./lib/class/Metamask";
+import TrustExam from "./lib/class/TrustExam";
+// var TrustExam = require("./lib/class/TrustExam");
 
 /**
  * ABIs
@@ -10,7 +11,7 @@ var TrustExam = require("./lib/class/TrustExam");
 
 var TrustExamABI = require("./lib/abi/TrustExam");
 
-module.exports = {
+export default {
   Metamask: Metamask,
   TrustExam: TrustExam,
   ABI: {

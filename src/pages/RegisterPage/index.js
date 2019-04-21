@@ -1,24 +1,23 @@
 import React from 'react'
 import Page from 'components/LayoutComponents/Page'
 import Helmet from 'react-helmet'
-import Register from './Register'
+import Exam from './Exam'
 
-class RegisterPage extends React.Component {
+class ExamPage extends React.Component {
   static defaultProps = {
-    pathName: 'Register Participant',
+    pathName: 'Empty Page',
     roles: ['agent', 'administrator'],
   }
 
   render() {
     const props = this.props
-    console.log(props)
     return (
       <Page {...props}>
-        <Helmet title="Register Participant" />
-        <Register />
+        <Helmet title="Exam Page" />
+        <Exam />
       </Page>
     )
   }
 }
 
-export default RegisterPage
+export default ExamPage

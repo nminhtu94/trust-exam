@@ -27,6 +27,9 @@ const loadableRoutes = {
   '/exam': {
     component: loadable(() => import('pages/ExamPage')),
   },
+  '/register-participant': {
+    component: loadable(() => import('pages/RegisterPage')),
+  },
 
   // '/exam': {
   //   component: loadable(() => import('pages/RegisterPage')),
