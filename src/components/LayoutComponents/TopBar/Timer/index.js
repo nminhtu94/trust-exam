@@ -1,5 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import classes from 'dist/'
+const { Metamask, TrustExam } = classes
+const config = require('../../../../config')
+
+const ADDRESS = require('../../../../' + config.default.blockchain.addressPath + '/TrustExam.json')
 
 const mapStateToProps = state => ({
   isRunning: state.app.isTimerRunning,
@@ -8,9 +13,14 @@ const mapStateToProps = state => ({
 @connect(mapStateToProps)
 class Timer extends React.Component {
   _timer = null
-
-  state = {
-    duration: 0,
+  constructor() {
+    super();
+    this.metamask = new Metamask()
+    this.trustExam = new TrustExam(ADDRESS, this.metamask.web3)
+    this.state = {
+      duration: 0,
+      timeUpAt: 0
+    }
   }
 
   calculate = () => {
@@ -42,6 +52,7 @@ class Timer extends React.Component {
     this.interval = setInterval(() => {
       this.forceUpdate()
     }, 1000)
+    this.onGetEndTime();
   }
 
   componentWillReceiveProps(next) {
@@ -87,8 +98,8 @@ class Timer extends React.Component {
 
   render() {
     const time = this.calculate()
-    const timeUpAt = 1555836129392
-    const timeLeft = parseInt((timeUpAt - new Date().getTime()) / 1000)
+    const {timeUpAt} = this.state
+    const timeLeft = parseInt((timeUpAt - new Date().getTime()/1000))
     const isExpired = timeLeft < 0
 
     return (
@@ -99,6 +110,16 @@ class Timer extends React.Component {
         </span>
       </div>
     )
+  }
+
+  onGetEndTime = () => {
+    this.trustExam.endTime()
+    .then(endTime => {
+      console.log(endTime)
+      this.setState({timeUpAt: endTime});
+    }).catch(error => {
+      console.log(error)
+    });
   }
 }
 

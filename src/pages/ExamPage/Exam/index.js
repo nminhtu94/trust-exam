@@ -7,11 +7,6 @@ import './style.scss'
 import { doUpdateTimer } from '../../../ducks/app'
 
 import QuestionObject from './QuestionObject'
-import classes from 'dist/'
-const { Metamask, TrustExam } = classes
-const config = require('../../../config')
-
-const ADDRESS = require('../../../' + config.default.blockchain.addressPath + '/TrustExam.json')
 
 const mapStateToProps = state => ({})
 
@@ -26,8 +21,6 @@ const mapDispatchToProps = {
 class Exam extends React.Component {
   constructor(props) {
     super(props)
-    this.metamask = new Metamask()
-    this.trustExam = new TrustExam(ADDRESS, this.metamask.web3)
   }
 
   componentDidMount() {

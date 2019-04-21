@@ -27,6 +27,8 @@
     "bootstrap": "^4.1.1",
     "classnames": "^2.2.5",
     "enquire-js": "^0.2.1",
+    "ethereumjs-abi": "^0.6.7",
+    "ethereumjs-util": "^6.1.0",
     "immutability-helper": "^2.7.0",
     "immutable": "^3.8.2",
     "lodash": "^4.17.10",

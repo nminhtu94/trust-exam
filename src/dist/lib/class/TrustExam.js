@@ -36,6 +36,16 @@ class TrustExam extends ContractAPI {
     })
   }
 
+  endTime() {
+    let self = this
+    return new Promise((resolve, reject) => {
+      self.contract.instance.endTime((error, result) => {
+        if (error) reject(error)
+        else resolve(result.toNumber())
+      })
+    })
+  }
+
   submissionWindow() {
     let self = this
     return new Promise((resolve, reject) => {

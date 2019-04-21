@@ -55,6 +55,10 @@ contract TrustExam is Ownable {
     return listExamIDs;
   }
 
+  function endTime() public view returns(uint256){
+    return startTime + duration;
+  }
+
   modifier onlyBeforeStartTime() {
     require(block.timestamp < startTime);
     _;

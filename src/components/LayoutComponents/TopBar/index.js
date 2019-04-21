@@ -40,9 +40,12 @@ class TopBar extends React.Component {
         <div className="topbar__right">
           {isExamPage && <Timer />}
           {isExamPage && (
-            <div className="d-inline-block mr-4" style={{ fontSize: '18px' }}>
+            <div className="d-inline-block mr-8" style={{ fontSize: '18px' }}>
               <Button type="primary" size="large" onClick={this.props.onSubmit}>
                 Submit
+              </Button>
+              <Button type="primary" size="large" onClick={this.props.onSubmitRaw}>
+                Submit Final
               </Button>
             </div>
           )}
