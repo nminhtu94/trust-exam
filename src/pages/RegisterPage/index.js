@@ -1,7 +1,7 @@
 import React from 'react'
 import Page from 'components/LayoutComponents/Page'
 import Helmet from 'react-helmet'
-import Exam from './Exam'
+import RegisterParticipant from './RegisterParticipant'
 
 class ExamPage extends React.Component {
   static defaultProps = {
@@ -14,7 +14,7 @@ class ExamPage extends React.Component {
     return (
       <Page {...props}>
         <Helmet title="Exam Page" />
-        <Exam />
+        <RegisterParticipant />
       </Page>
     )
   }

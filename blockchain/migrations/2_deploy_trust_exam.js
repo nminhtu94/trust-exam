@@ -1,5 +1,5 @@
 const TrustExam = artifacts.require("TrustExam");
-const startTime = Date.now() + 10 * 60 * 1000;
+const startTime = Date.now()/1000 + 10 * 60;
 const duration = 600;
 const submissionWindow = 600;
 console.log(web3.sha3('1'));

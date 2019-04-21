@@ -1,14 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Collapse } from 'antd'
 import './style.scss'
 import { doUpdateTimer } from '../../../ducks/app'
 import { Table, Button, Form, Input, Select } from 'antd'
-import classes from 'dist/'
+import classes from 'dist/';
+import moment from 'moment';
 const Option = Select.Option
-const { Metamask, TrustExam } = classes
+const { Metamask, TrustExam } = classes;
 
-const config = require('config')
+const config = require('../../../config')
 
 const ADDRESS = require('../../../' + config.default.blockchain.addressPath + '/TrustExam.json')
 
@@ -38,19 +38,21 @@ class Exam extends React.Component {
   }
   componentDidMount() {
     const { doUpdateTimerAction } = this.props
-    doUpdateTimerAction(true)
-    this.onLoadExamIds()
-    setTimeout(() => doUpdateTimerAction(false), 5000)
+    doUpdateTimerAction(true);
+    this.onLoadExamIds();
+    this.onLoadStartTime();
+    setTimeout(() => doUpdateTimerAction(false), 5000);
   }
 
   render() {
-    const { examIDs } = this.state
+    const { examIDs, startTime } = this.state
     return (
       <div
         className="utils__content"
         style={{ position: 'fixed', top: '64px', bottom: '0', overflowY: 'auto' }}
       >
         <section className="card" style={{ width: '100%' }}>
+          <p>End time for register participant: {startTime}</p>
           <Input
             value={this.state.participantAddress}
             onChange={this.handleTextChange}
@@ -82,10 +84,22 @@ class Exam extends React.Component {
   }
 
   onLoadExamIds() {
-    this.trustExam
-      .getListExamIDs()
+    this.trustExam.getListExamIDs()
       .then(examIDs => {
         this.setState({ examIDs: examIDs })
+      })
+      .catch(error => {
+        // this.setState({examIDs: []});
+        console.log(error)
+      })
+  }
+
+  onLoadStartTime() {
+    this.trustExam.startTime()
+      .then(startTime => {
+        console.log(startTime);
+        this.setState({ startTime: moment(startTime * 1000).format('MMMM Do YYYY, h:mm:ss a')})
+        // this.setState({ examIDs: examIDs })
       })
       .catch(error => {
         // this.setState({examIDs: []});

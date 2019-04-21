@@ -74,4 +74,4 @@ class ContractAPI {
   }
 }
 
-export default ContractAPI
+export default ContractAPI;
