@@ -3,10 +3,10 @@ import { connect } from 'react-redux'
 import './style.scss'
 import { doUpdateTimer } from '../../../ducks/app'
 import { Table, Button, Form, Input, Select } from 'antd'
-import classes from 'dist/';
-import moment from 'moment';
+import classes from 'dist/'
+import moment from 'moment'
 const Option = Select.Option
-const { Metamask, TrustExam } = classes;
+const { Metamask, TrustExam } = classes
 
 const config = require('../../../config')
 
@@ -38,10 +38,10 @@ class Exam extends React.Component {
   }
   componentDidMount() {
     const { doUpdateTimerAction } = this.props
-    doUpdateTimerAction(true);
-    this.onLoadExamIds();
-    this.onLoadStartTime();
-    setTimeout(() => doUpdateTimerAction(false), 5000);
+    doUpdateTimerAction(true)
+    this.onLoadExamIds()
+    this.onLoadStartTime()
+    setTimeout(() => doUpdateTimerAction(false), 5000)
   }
 
   render() {
@@ -84,7 +84,8 @@ class Exam extends React.Component {
   }
 
   onLoadExamIds() {
-    this.trustExam.getListExamIDs()
+    this.trustExam
+      .getListExamIDs()
       .then(examIDs => {
         this.setState({ examIDs: examIDs })
       })
@@ -95,10 +96,11 @@ class Exam extends React.Component {
   }
 
   onLoadStartTime() {
-    this.trustExam.startTime()
+    this.trustExam
+      .startTime()
       .then(startTime => {
-        console.log(startTime);
-        this.setState({ startTime: moment(startTime * 1000).format('MMMM Do YYYY, h:mm:ss a')})
+        console.log(startTime)
+        this.setState({ startTime: moment(startTime * 1000).format('MMMM Do YYYY, h:mm:ss a') })
         // this.setState({ examIDs: examIDs })
       })
       .catch(error => {

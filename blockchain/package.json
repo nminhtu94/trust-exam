@@ -7,6 +7,7 @@
     "test": "test"
   },
   "scripts": {
+    "build-rinkeby": "network=rinkeby npm run build-test",
     "build-local": "network=development npm run build-test",
     "build-test": "npm run pre-build-test && NODE_ENV=test node build.js && npm run post-build-test",
     "pre-build-test": "rm -rf build ../src/dist/lib && rm -rf build ../src/dist/address/${network} && mkdir -p ../src/dist/lib && mkdir -p ../src/dist/address/${network} && npm run compile && npm run deploy",
