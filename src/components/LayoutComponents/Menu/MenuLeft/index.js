@@ -116,16 +116,20 @@ class MenuLeft extends React.Component {
 
   generateMenuItem(answers) {
     return (
-      answers && answers.map((answer, index) => (
+      answers &&
+      answers.map((answer, index) => (
         <Menu.Item
           key={Math.random().toString(36)}
           disabled={false}
-          onClick={() => document.getElementById("question-cell" + (index + 1)).scrollIntoView()}>
-          <b className="menuLeft__item-title" style={{ width: 30 }}>{index + 1}. </b>
+          onClick={() => document.getElementById('question-cell' + (index + 1)).scrollIntoView()}
+        >
+          <b className="menuLeft__item-title" style={{ width: 30 }}>
+            {index + 1}.{' '}
+          </b>
           <span>{answer === '' ? '__' : String.fromCharCode(65 + parseInt(answer))}</span>
         </Menu.Item>
       ))
-    );
+    )
   }
 
   onCollapse = (value, type) => {
@@ -179,7 +183,7 @@ class MenuLeft extends React.Component {
       <Sider {...params} className="menuLeft">
         <Scrollbars
           autoHide
-          style={{ height: isMobile ? 'calc(100vh - 64px)' : 'calc(100vh - 112px)' }}
+          style={{ height: isMobile ? 'calc(100vh - 30px)' : 'calc(100vh - 30px)' }}
         >
           <Menu
             theme={theme}

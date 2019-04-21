@@ -46,8 +46,9 @@ class HomePage extends React.Component {
                     style={{ width: '100%' }}
                     cover={
                       <img
+                        height="160px"
                         alt="example"
-                        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                        src="https://sabakuchsocial.files.wordpress.com/2018/03/physics.jpg?w=930&h=450&crop=1"
                       />
                     }
                     actions={[
@@ -70,8 +71,9 @@ class HomePage extends React.Component {
                     style={{ width: '100%' }}
                     cover={
                       <img
+                        height="160px"
                         alt="example"
-                        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                        src="https://tuitionphysics.com/wp-content/uploads/2013/10/physics-exam-preparation.jpg"
                       />
                     }
                     actions={[
@@ -94,8 +96,9 @@ class HomePage extends React.Component {
                     style={{ width: '100%' }}
                     cover={
                       <img
+                        height="160px"
                         alt="example"
-                        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                        src="https://1.bp.blogspot.com/-NCqCEIMP4ps/UOl8KQt4_II/AAAAAAAABg8/REjaQIfYhno/s1600/Physics%2BKo%2BExam-753239.jpg"
                       />
                     }
                     actions={[
@@ -118,106 +121,9 @@ class HomePage extends React.Component {
                     style={{ width: '100%' }}
                     cover={
                       <img
+                        height="160px"
                         alt="example"
-                        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-                      />
-                    }
-                    actions={[
-                      <span onClick={this.handleOnclick}>
-                        <Icon type="edit" />
-                      </span>,
-                    ]}
-                  >
-                    <Meta
-                      avatar={
-                        <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-                      }
-                      title="Card title"
-                      description="This is the description"
-                    />
-                  </Card>
-                </div>
-              </div>
-              <div className="row" style={{ marginTop: '30px' }}>
-                <div className="col-md-3">
-                  <Card
-                    style={{ width: '100%' }}
-                    cover={
-                      <img
-                        alt="example"
-                        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-                      />
-                    }
-                    actions={[
-                      <span onClick={this.handleOnclick}>
-                        <Icon type="edit" />
-                      </span>,
-                    ]}
-                  >
-                    <Meta
-                      avatar={
-                        <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-                      }
-                      title="Card title"
-                      description="This is the description"
-                    />
-                  </Card>
-                </div>
-                <div className="col-md-3">
-                  <Card
-                    style={{ width: '100%' }}
-                    cover={
-                      <img
-                        alt="example"
-                        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-                      />
-                    }
-                    actions={[
-                      <span onClick={this.handleOnclick}>
-                        <Icon type="edit" />
-                      </span>,
-                    ]}
-                  >
-                    <Meta
-                      avatar={
-                        <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-                      }
-                      title="Card title"
-                      description="This is the description"
-                    />
-                  </Card>
-                </div>
-                <div className="col-md-3">
-                  <Card
-                    style={{ width: '100%' }}
-                    cover={
-                      <img
-                        alt="example"
-                        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-                      />
-                    }
-                    actions={[
-                      <span onClick={this.handleOnclick}>
-                        <Icon type="edit" />
-                      </span>,
-                    ]}
-                  >
-                    <Meta
-                      avatar={
-                        <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-                      }
-                      title="Card title"
-                      description="This is the description"
-                    />
-                  </Card>
-                </div>
-                <div className="col-md-3">
-                  <Card
-                    style={{ width: '100%' }}
-                    cover={
-                      <img
-                        alt="example"
-                        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                        src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/201603/physics-647_030316125329.jpg"
                       />
                     }
                     actions={[
