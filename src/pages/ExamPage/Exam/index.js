@@ -31,16 +31,6 @@ class Exam extends React.Component {
     setTimeout(() => doUpdateTimerAction(false), 5000)
   }
 
-  getAnswer = () => {
-    let questions = document.querySelectorAll('article')
-    let answers = []
-    questions.forEach(question => {
-      answers.push(question.getAttribute('answer') || '')
-    })
-    const result = answers.join(',')
-    return result
-  }
-
   render() {
     return (
       <div
