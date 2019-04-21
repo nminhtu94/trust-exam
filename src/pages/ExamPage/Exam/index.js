@@ -31,13 +31,13 @@ class Exam extends React.Component {
     setTimeout(() => doUpdateTimerAction(false), 5000)
   }
 
-  componentWillUnmount() {}
+  componentWillUnmount() { }
 
   render() {
     return (
       <div
         className="utils__content"
-        style={{ position: 'fixed', top: '64px', bottom: '0', overflowY: 'auto' }}
+        style={{ position: 'fixed', top: '64px', bottom: '0', left: '200px', right: '0', overflowY: 'auto' }}
       >
         <section className="card">
           <div className="card-header">
