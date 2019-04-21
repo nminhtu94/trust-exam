@@ -2,8 +2,8 @@ import React from 'react'
 import { withRouter } from 'react-router-dom'
 import Page from 'components/LayoutComponents/Page'
 import Helmet from 'react-helmet'
-import { Card, Icon, Avatar } from 'antd';
-import { throws } from 'assert';
+import { Card, Icon, Avatar } from 'antd'
+import { throws } from 'assert'
 const { Meta } = Card
 
 @withRouter
@@ -14,8 +14,8 @@ class HomePage extends React.Component {
   }
 
   handleOnclick = () => {
-    const { history } = this.props;
-    history.push('/exam');
+    const { history } = this.props
+    history.push('/exam')
   }
 
   render() {
@@ -24,7 +24,14 @@ class HomePage extends React.Component {
       <Page {...props}>
         <div
           className="utils__content"
-          style={{ position: 'fixed', top: '64px', bottom: '0', left: '0', right: '0', overflowY: 'auto' }}
+          style={{
+            position: 'fixed',
+            top: '64px',
+            bottom: '0',
+            left: '0',
+            right: '0',
+            overflowY: 'auto',
+          }}
         >
           <section className="card">
             <div className="card-header">
@@ -37,11 +44,22 @@ class HomePage extends React.Component {
                 <div className="col-md-3">
                   <Card
                     style={{ width: '100%' }}
-                    cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
-                    actions={[<span onClick={this.handleOnclick}><Icon type="edit" /></span>]}
+                    cover={
+                      <img
+                        alt="example"
+                        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                      />
+                    }
+                    actions={[
+                      <span onClick={this.handleOnclick}>
+                        <Icon type="edit" />
+                      </span>,
+                    ]}
                   >
                     <Meta
-                      avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                      avatar={
+                        <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                      }
                       title="Card title"
                       description="This is the description"
                     />
@@ -50,11 +68,22 @@ class HomePage extends React.Component {
                 <div className="col-md-3">
                   <Card
                     style={{ width: '100%' }}
-                    cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
-                    actions={[<span onClick={this.handleOnclick}><Icon type="edit" /></span>]}
+                    cover={
+                      <img
+                        alt="example"
+                        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                      />
+                    }
+                    actions={[
+                      <span onClick={this.handleOnclick}>
+                        <Icon type="edit" />
+                      </span>,
+                    ]}
                   >
                     <Meta
-                      avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                      avatar={
+                        <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                      }
                       title="Card title"
                       description="This is the description"
                     />
@@ -63,11 +92,22 @@ class HomePage extends React.Component {
                 <div className="col-md-3">
                   <Card
                     style={{ width: '100%' }}
-                    cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
-                    actions={[<span onClick={this.handleOnclick}><Icon type="edit" /></span>]}
+                    cover={
+                      <img
+                        alt="example"
+                        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                      />
+                    }
+                    actions={[
+                      <span onClick={this.handleOnclick}>
+                        <Icon type="edit" />
+                      </span>,
+                    ]}
                   >
                     <Meta
-                      avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                      avatar={
+                        <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                      }
                       title="Card title"
                       description="This is the description"
                     />
@@ -76,11 +116,22 @@ class HomePage extends React.Component {
                 <div className="col-md-3">
                   <Card
                     style={{ width: '100%' }}
-                    cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
-                    actions={[<span onClick={this.handleOnclick}><Icon type="edit" /></span>]}
+                    cover={
+                      <img
+                        alt="example"
+                        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                      />
+                    }
+                    actions={[
+                      <span onClick={this.handleOnclick}>
+                        <Icon type="edit" />
+                      </span>,
+                    ]}
                   >
                     <Meta
-                      avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                      avatar={
+                        <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                      }
                       title="Card title"
                       description="This is the description"
                     />
@@ -91,11 +142,22 @@ class HomePage extends React.Component {
                 <div className="col-md-3">
                   <Card
                     style={{ width: '100%' }}
-                    cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
-                    actions={[<span onClick={this.handleOnclick}><Icon type="edit" /></span>]}
+                    cover={
+                      <img
+                        alt="example"
+                        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                      />
+                    }
+                    actions={[
+                      <span onClick={this.handleOnclick}>
+                        <Icon type="edit" />
+                      </span>,
+                    ]}
                   >
                     <Meta
-                      avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                      avatar={
+                        <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                      }
                       title="Card title"
                       description="This is the description"
                     />
@@ -104,11 +166,22 @@ class HomePage extends React.Component {
                 <div className="col-md-3">
                   <Card
                     style={{ width: '100%' }}
-                    cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
-                    actions={[<span onClick={this.handleOnclick}><Icon type="edit" /></span>]}
+                    cover={
+                      <img
+                        alt="example"
+                        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                      />
+                    }
+                    actions={[
+                      <span onClick={this.handleOnclick}>
+                        <Icon type="edit" />
+                      </span>,
+                    ]}
                   >
                     <Meta
-                      avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                      avatar={
+                        <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                      }
                       title="Card title"
                       description="This is the description"
                     />
@@ -117,11 +190,22 @@ class HomePage extends React.Component {
                 <div className="col-md-3">
                   <Card
                     style={{ width: '100%' }}
-                    cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
-                    actions={[<span onClick={this.handleOnclick}><Icon type="edit" /></span>]}
+                    cover={
+                      <img
+                        alt="example"
+                        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                      />
+                    }
+                    actions={[
+                      <span onClick={this.handleOnclick}>
+                        <Icon type="edit" />
+                      </span>,
+                    ]}
                   >
                     <Meta
-                      avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                      avatar={
+                        <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                      }
                       title="Card title"
                       description="This is the description"
                     />
@@ -130,11 +214,22 @@ class HomePage extends React.Component {
                 <div className="col-md-3">
                   <Card
                     style={{ width: '100%' }}
-                    cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
-                    actions={[<span onClick={this.handleOnclick}><Icon type="edit" /></span>]}
+                    cover={
+                      <img
+                        alt="example"
+                        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                      />
+                    }
+                    actions={[
+                      <span onClick={this.handleOnclick}>
+                        <Icon type="edit" />
+                      </span>,
+                    ]}
                   >
                     <Meta
-                      avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                      avatar={
+                        <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                      }
                       title="Card title"
                       description="This is the description"
                     />
