@@ -1,7 +1,7 @@
 'use strict'
 var HDWalletProvider = require("truffle-hdwallet-provider");
-var mnemonic = 'tenant wash inside group deposit honey draft math media lunch swing drink';
-var rinkebyMnemonic = 'robot lunar grace crazy nerve erode wheel middle actress damp embody measure';
+var mnemonic = 'lunar lunar lunar lunar lunar lunar lunar lunar lunar lunar lunar lunar';
+var rinkebyMnemonic = 'lunar lunar lunar lunar lunar lunar lunar lunar lunar lunar lunar lunar';
 
 const providerWithMnemonic = (mnemonic, rpcEndpoint) =>
   new HDWalletProvider(mnemonic, rpcEndpoint, 0, 1); //, process.env.PASSWORD);
